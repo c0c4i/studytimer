@@ -9,7 +9,6 @@ class CountDownTimerPage extends StatefulWidget {
 }
 
 class _State extends State<CountDownTimerPage> {
-
   final StopWatchTimer _stopWatchTimer = StopWatchTimer(
     mode: StopWatchMode.countDown,
     presetMillisecond: StopWatchTimer.getMilliSecFromMinute(15),
@@ -24,9 +23,7 @@ class _State extends State<CountDownTimerPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Study Timer'),
-      ),
+      backgroundColor: Colors.white,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -38,8 +35,11 @@ class _State extends State<CountDownTimerPage> {
               initialData: _stopWatchTimer.rawTime.value,
               builder: (context, snap) {
                 final value = snap.data!;
-                final displayTime =
-                    StopWatchTimer.getDisplayTime(value, hours: false, milliSecond: false, );
+                final displayTime = StopWatchTimer.getDisplayTime(
+                  value,
+                  hours: false,
+                  milliSecond: false,
+                );
                 return Column(
                   children: <Widget>[
                     Padding(
@@ -65,8 +65,7 @@ class _State extends State<CountDownTimerPage> {
                 shape: const StadiumBorder(),
               ),
               onPressed: () async {
-                _stopWatchTimer.onExecute
-                    .add(StopWatchExecute.start);
+                _stopWatchTimer.onExecute.add(StopWatchExecute.start);
               },
               child: const Text(
                 'Start',
@@ -81,8 +80,7 @@ class _State extends State<CountDownTimerPage> {
                 shape: const StadiumBorder(),
               ),
               onPressed: () async {
-                _stopWatchTimer.onExecute
-                    .add(StopWatchExecute.stop);
+                _stopWatchTimer.onExecute.add(StopWatchExecute.stop);
               },
               child: const Text(
                 'Stop',
@@ -97,8 +95,7 @@ class _State extends State<CountDownTimerPage> {
                 shape: const StadiumBorder(),
               ),
               onPressed: () async {
-                _stopWatchTimer.onExecute
-                    .add(StopWatchExecute.reset);
+                _stopWatchTimer.onExecute.add(StopWatchExecute.reset);
               },
               child: const Text(
                 'Reset',
