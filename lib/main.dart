@@ -27,8 +27,8 @@ Future<void> main() async {
       // await Window.hideWindowControls();
     }
 
-    await DesktopWindow.setMaxWindowSize(const Size(360, 264));
-    await DesktopWindow.setMinWindowSize(const Size(360, 264));
+    // await DesktopWindow.setMaxWindowSize(const Size(360, 400));
+    // await DesktopWindow.setMinWindowSize(const Size(360, 400));
   }
 
   runApp(const MyApp());

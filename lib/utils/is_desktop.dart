@@ -1,5 +1,5 @@
 import 'dart:io';
 
-bool isDesktop() {
+get isDesktop {
   return Platform.isLinux || Platform.isMacOS || Platform.isWindows;
 }
